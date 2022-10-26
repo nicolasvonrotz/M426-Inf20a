@@ -13,5 +13,9 @@ namespace Calculator
         {
             return minuend - subtrahend;
         }
+
+        public double Multiplikation(double faktor1, double faktor2) { 
+            return faktor1 * faktor2; 
+        }
     }
 }

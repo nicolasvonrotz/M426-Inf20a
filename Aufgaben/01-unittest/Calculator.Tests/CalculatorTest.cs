@@ -36,5 +36,20 @@ namespace Calculator.Tests
             // Then
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void TestMultiplikationFourTimesFourIsSixteen()
+        {
+            //Arrange
+            double faktor = 4;
+            double expected = 16;
+            Calculator calculator = new Calculator();
+
+            //Act
+            double result = calculator.Multiplikation(faktor, faktor);
+
+            //Assert
+            Assert.Equal(expected, result);
+        }
     }
 }
