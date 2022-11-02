@@ -38,6 +38,7 @@ namespace Calculator.Tests
         }
 
         [Fact]
+<<<<<<< HEAD
         public void TestMultiplikationFourTimesFourIsSixteen()
         {
             //Arrange
@@ -50,6 +51,49 @@ namespace Calculator.Tests
 
             //Assert
             Assert.Equal(expected, result);
+=======
+        public void TestMultiplyFourTimesSixIsTwentyFour()
+        {
+            // Given
+            double a = 6;
+            double b = 4;
+            double expected = 24;
+            Calculator calculator = new Calculator();
+
+            // When
+            double actual = calculator.Multiply(a, b);
+
+            // Then
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void TestDivideTwntyThroughFourIsFive()
+        {
+            // Given
+            double a = 20;
+            double b = 4;
+            double expected = 5;
+            Calculator calculator = new Calculator();
+
+            // When
+            double actual = calculator.Divide(a, b);
+
+            // Then
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void TestDivideThroughZero()
+        {
+            // Given
+            double a = 20;
+            double b = 0;
+            Calculator calculator = new Calculator();
+
+            // Then
+            Assert.Throws<ArgumentException>(() => calculator.Divide(a, b));
+>>>>>>> cb5ed189f8dc581602651a4ecd28ac8fa8cebd50
         }
     }
 }
