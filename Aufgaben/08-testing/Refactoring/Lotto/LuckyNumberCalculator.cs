@@ -1,6 +1,11 @@
 ﻿namespace Testing.Lotto;
 
-public class LuckyNumberCalculator
+public interface ILuckyNumberCalculator
+{
+    bool IsCorrectLuckyNumber(int luckyNumber);
+}
+
+public class LuckyNumberCalculator : ILuckyNumberCalculator
 {
     private readonly int _drawnLuckyNumber;
 
@@ -9,7 +14,7 @@ public class LuckyNumberCalculator
         _drawnLuckyNumber = drawnLuckyNumber;
     }
 
-    public bool Validate(int luckyNumber)
+    public bool IsCorrectLuckyNumber(int luckyNumber)
     {
         if (luckyNumber is > 6 or < 1)
         {

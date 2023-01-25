@@ -1,6 +1,11 @@
 ﻿namespace Testing.Lotto;
 
-public class LottoNumberRetriever
+public interface ILottoNumberRetriever
+{
+    int[] DrawnLottoNumbers { get; }
+}
+
+public class LottoNumberRetriever : ILottoNumberRetriever
 {
     public LottoNumberRetriever(int[] drawnLottoNumbers)
     {

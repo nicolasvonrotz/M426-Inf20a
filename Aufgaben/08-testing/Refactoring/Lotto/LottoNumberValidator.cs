@@ -1,6 +1,11 @@
 ﻿namespace Testing.Lotto;
 
-public class LottoNumberValidator
+public interface ILottoNumberValidator
+{
+    bool Validate(int[] lottoNumbers);
+}
+
+public class LottoNumberValidator : ILottoNumberValidator
 {
     public bool Validate(int[] lottoNumbers)
     {

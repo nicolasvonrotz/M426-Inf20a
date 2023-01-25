@@ -2,14 +2,14 @@
 {
     public class LottoCalculator
     {
-        private readonly LottoNumberValidator _lottoNumberValidator;
-        private readonly LuckyNumberCalculator _luckyNumberCalculator;
-        private readonly LottoNumberRetriever _lottoNumberRetriever;
+        private readonly ILottoNumberValidator _lottoNumberValidator;
+        private readonly ILuckyNumberCalculator _luckyNumberCalculator;
+        private readonly ILottoNumberRetriever _lottoNumberRetriever;
 
         public LottoCalculator(
-            LottoNumberValidator lottoNumberValidator,
-            LuckyNumberCalculator luckyNumberCalculator,
-            LottoNumberRetriever lottoNumberRetriever)
+            ILottoNumberValidator lottoNumberValidator,
+            ILuckyNumberCalculator luckyNumberCalculator,
+            ILottoNumberRetriever lottoNumberRetriever)
         {
             _lottoNumberValidator = lottoNumberValidator;
             _luckyNumberCalculator = luckyNumberCalculator;
@@ -25,7 +25,7 @@
                 throw new ArgumentException("Invalid lotto numbers");
             }
 
-            if (_luckyNumberCalculator.Validate(luckyNumber))
+            if (_luckyNumberCalculator.IsCorrectLuckyNumber(luckyNumber))
             {
                 resultMultiplication = 2;
             }
